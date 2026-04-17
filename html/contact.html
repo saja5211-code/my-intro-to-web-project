@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Information</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <title>Contact</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
 <header>
-  <h1>My Portfolio</h1>
+  <h1><i class="fa-solid fa-address-book"></i> Contact</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+
+    <button onclick="document.body.classList.toggle('dark')">
+      <i class="fa-solid fa-moon"></i>
+    </button>
   </nav>
 </header>
 
 <main>
 
-    <h2>Contact Information</h2>
+<table>
 
-    <p>Feel free to reach out to me through the following:</p>
+<tr>
+  <th>Type</th>
+  <th>Details</th>
+</tr>
 
-    <ul> 
-        <li><strong>Email:</strong> saja_5211@limu.edu.ly</li>
-        <li><strong>Phone:</strong> 0914628911</li>
-    </ul>
+<tr>
+  <td><i class="fa-solid fa-envelope"></i> Email</td>
+  <td>saja_5211@limu.edu.ly</td>
+</tr>
 
-    <section>
-      <table border="1">
-        <tr>
-          <th>Contact Me</th>
-          <th>Details</th>
-        </tr>
+<tr>
+  <td><i class="fa-solid fa-phone"></i> Phone</td>
+  <td>+218 914628911</td>
+</tr>
 
-        <tr>
-          <td>GitHub</td>
-          <td>
-            <a href="https://github.com/saja5211-code" target="_blank">
-              github.com/saja5211-code
-            </a>
-          </td>
-        </tr>
+<tr>
+  <td><i class="fa-brands fa-github"></i> GitHub</td>
+  <td>github.com/saja5211-code</td>
+</tr>
 
-        <tr>
-          <td>Location</td>
-          <td>Benghazi, Libya</td>
-        </tr>
+<tr>
+  <td><i class="fa-solid fa-location-dot"></i> Location</td>
+  <td>Benghazi, Libya</td>
+</tr>
 
-        <tr>
-          <td>Skills</td>
-          <td>HTML, CSS (Beginner), Python, C</td>
-        </tr>
+<tr>
+  <td><i class="fa-solid fa-code"></i> Specialization</td>
+  <td>Software Engineer</td>
+</tr>
 
-      </table>
-    </section>
+</table>
+
+<h2>Send Message</h2>
+
+<form onsubmit="sendMessage(event)">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea placeholder="Your Message"></textarea>
+
+  <button type="submit">Send</button>
+</form>
+
+<p id="msg"></p>
 
 </main>
 
 <footer>
-  <p>© 2026 My Portfolio</p>
+  <p>My Portfolio</p>
 </footer>
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  document.getElementById("msg").innerHTML =
+  "✅ Message sent successfully!";
+}
+</script>
 
 </body>
 </html>
