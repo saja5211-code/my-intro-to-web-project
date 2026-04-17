@@ -10,6 +10,10 @@
 <header>
   <h1>My Gallery</h1>
 
+  <button onclick="document.body.classList.toggle('dark')">
+    Dark Mode
+  </button>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -20,60 +24,75 @@
 
 <main>
 
-<section>
-  <h2>My Images</h2>
+<h2>My Images</h2>
 
-  <div class="gallery">
+<div class="gallery">
 
-    <div class="card">
-      <img src="../images/code.jpg">
-      <p>Code Setup</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/coding.jpg">
-      <p>Coding</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/desktop.jpg">
-      <p>Workspace</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/error.jpg">
-      <p>Debugging</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/project.jpg">
-      <p>Project</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/workspace.jpg">
-      <p>Work Space</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/swim.jpg">
-      <p>Relax</p>
-    </div>
-
-    <div class="card">
-      <img src="../images/beach.jpg">
-      <p>Beach Vibes</p>
-    </div>
-
+  <div class="card">
+    <img src="../images/code.jpg" onclick="openImg(this)">
+    <p>Code Setup</p>
   </div>
 
-</section>
+  <div class="card">
+    <img src="../images/coding.jpg" onclick="openImg(this)">
+    <p>Coding</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/desktop.jpg" onclick="openImg(this)">
+    <p>Workspace</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/error.jpg" onclick="openImg(this)">
+    <p>Debugging</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/project.jpg" onclick="openImg(this)">
+    <p>Project</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/workspace.jpg" onclick="openImg(this)">
+    <p>Workspace</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/swim.jpg" onclick="openImg(this)">
+    <p>Relax</p>
+  </div>
+
+  <div class="card">
+    <img src="../images/beach.jpg" onclick="openImg(this)">
+    <p>Beach</p>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
 
 </main>
 
+<a href="#" class="top-btn">↑</a>
+
 <footer>
-  <p>© 2026 My Portfolio</p>
+  <p>My Portfolio</p>
 </footer>
+
+<script>
+function openImg(img) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeImg() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
