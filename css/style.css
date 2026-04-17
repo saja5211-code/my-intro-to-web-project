@@ -64,3 +64,7 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(16, 70, 95, 0.3);
 }
+
+body {
+  background-color: yellow;
+}
