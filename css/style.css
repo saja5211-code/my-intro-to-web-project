@@ -1,5 +1,5 @@
 /* =========================
-   RESET + BODY
+   RESET
 ========================= */
 * {
   margin: 0;
@@ -8,6 +8,9 @@
   font-family: Arial, sans-serif;
 }
 
+/* =========================
+   BODY
+========================= */
 html, body {
   height: 100%;
 }
@@ -21,13 +24,16 @@ body {
 }
 
 /* =========================
-   HEADER
+   HEADER (Sticky Navbar)
 ========================= */
 header {
   background: linear-gradient(90deg, #4facfe, #00f2fe);
   color: white;
   text-align: center;
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* NAV */
@@ -66,6 +72,7 @@ main {
   margin-top: 20px;
 }
 
+/* CARD */
 .card {
   background: white;
   border-radius: 15px;
@@ -83,6 +90,11 @@ main {
   height: 180px;
   object-fit: cover;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card p {
@@ -112,7 +124,7 @@ th, td {
 }
 
 /* =========================
-   FOOTER (FIX BOTTOM)
+   FOOTER (Always Bottom)
 ========================= */
 footer {
   background: #222;
@@ -122,7 +134,30 @@ footer {
 }
 
 /* =========================
-   MOBILE
+   BACK TO TOP BUTTON
+========================= */
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4facfe;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
 
