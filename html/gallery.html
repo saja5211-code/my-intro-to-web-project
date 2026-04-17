@@ -8,40 +8,52 @@
 <body>
 
 <header>
-  <h1>My Gallery</h1>
+  <h1>Gallery</h1>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="gallery.html">Gallery</a>
+
+    <button onclick="toggleDark()">🌙</button>
   </nav>
 </header>
 
 <main>
 
-<h2>My Images</h2>
-
 <div class="gallery">
 
   <div class="card">
-    <img src="../images/code.jpg" onclick="openImg(this)">
-    <p>Code Setup</p>
+    <img src="../images/code.jpg" onclick="openLightbox(0)">
   </div>
 
   <div class="card">
-    <img src="../images/coding.jpg" onclick="openImg(this)">
-    <p>Coding</p>
+    <img src="../images/coding.jpg" onclick="openLightbox(1)">
   </div>
 
   <div class="card">
-    <img src="../images/desktop.jpg" onclick="openImg(this)">
-    <p>Workspace</p>
+    <img src="../images/desktop.jpg" onclick="openLightbox(2)">
   </div>
 
   <div class="card">
-    <img src="../images/error.jpg" onclick="openImg(this)">
-    <p>Debugging</p>
+    <img src="../images/error.jpg" onclick="openLightbox(3)">
+  </div>
+
+  <div class="card">
+    <img src="../images/project.jpg" onclick="openLightbox(4)">
+  </div>
+
+  <div class="card">
+    <img src="../images/workspace.jpg" onclick="openLightbox(5)">
+  </div>
+
+  <div class="card">
+    <img src="../images/swim.jpg" onclick="openLightbox(6)">
+  </div>
+
+  <div class="card">
+    <img src="../images/beach.jpg" onclick="openLightbox(7)">
   </div>
 
 </div>
@@ -49,8 +61,14 @@
 </main>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeImg()">
+<div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
+
+  <div class="lb-controls">
+    <button onclick="prev(event)">◀</button>
+    <button onclick="next(event)">▶</button>
+    <button onclick="closeLightbox()">✖</button>
+  </div>
 </div>
 
 <footer>
@@ -58,13 +76,45 @@
 </footer>
 
 <script>
-function openImg(img) {
+let images = [
+  "../images/code.jpg",
+  "../images/coding.jpg",
+  "../images/desktop.jpg",
+  "../images/error.jpg",
+  "../images/project.jpg",
+  "../images/workspace.jpg",
+  "../images/swim.jpg",
+  "../images/beach.jpg"
+];
+
+let current = 0;
+
+function openLightbox(i) {
+  current = i;
   document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox-img").src = images[current];
 }
 
-function closeImg() {
+function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+}
+
+function next(e) {
+  e.stopPropagation();
+  current++;
+  if(current >= images.length) current = 0;
+  document.getElementById("lightbox-img").src = images[current];
+}
+
+function prev(e) {
+  e.stopPropagation();
+  current--;
+  if(current < 0) current = images.length - 1;
+  document.getElementById("lightbox-img").src = images[current];
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
 }
 </script>
 

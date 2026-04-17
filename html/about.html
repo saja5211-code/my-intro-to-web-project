@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About Me</title>
+  <title>About</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -15,31 +15,32 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="gallery.html">Gallery</a>
+
+    <button onclick="toggleDark()">🌙</button>
   </nav>
 </header>
 
 <main>
 
 <h2>About Me</h2>
+<p>I am learning web development.</p>
 
-<p>I am a student learning web development.</p>
-
-<h3>My Skills</h3>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>Python</li>
-</ul>
-
-<!-- IMAGES -->
-<img src="../images/workspace.jpg" onclick="openImg(this)" width="200">
-<img src="../images/code.jpg" onclick="openImg(this)" width="250">
+<div class="about-images">
+  <img src="../images/workspace.jpg" onclick="openLightbox(0)">
+  <img src="../images/code.jpg" onclick="openLightbox(1)">
+</div>
 
 </main>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeImg()">
+<div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
+
+  <div class="lb-controls">
+    <button onclick="prev(event)">◀</button>
+    <button onclick="next(event)">▶</button>
+    <button onclick="closeLightbox()">✖</button>
+  </div>
 </div>
 
 <footer>
@@ -47,13 +48,39 @@
 </footer>
 
 <script>
-function openImg(img) {
+let images = [
+  "../images/workspace.jpg",
+  "../images/code.jpg"
+];
+
+let current = 0;
+
+function openLightbox(i) {
+  current = i;
   document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox-img").src = images[current];
 }
 
-function closeImg() {
+function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+}
+
+function next(e) {
+  e.stopPropagation();
+  current++;
+  if(current >= images.length) current = 0;
+  document.getElementById("lightbox-img").src = images[current];
+}
+
+function prev(e) {
+  e.stopPropagation();
+  current--;
+  if(current < 0) current = images.length - 1;
+  document.getElementById("lightbox-img").src = images[current];
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
 }
 </script>
 
