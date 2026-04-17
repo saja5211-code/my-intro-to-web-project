@@ -10,10 +10,6 @@
 <header>
   <h1>My Gallery</h1>
 
-  <button onclick="document.body.classList.toggle('dark')">
-    Dark Mode
-  </button>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -48,36 +44,14 @@
     <p>Debugging</p>
   </div>
 
-  <div class="card">
-    <img src="../images/project.jpg" onclick="openImg(this)">
-    <p>Project</p>
-  </div>
-
-  <div class="card">
-    <img src="../images/workspace.jpg" onclick="openImg(this)">
-    <p>Workspace</p>
-  </div>
-
-  <div class="card">
-    <img src="../images/swim.jpg" onclick="openImg(this)">
-    <p>Relax</p>
-  </div>
-
-  <div class="card">
-    <img src="../images/beach.jpg" onclick="openImg(this)">
-    <p>Beach</p>
-  </div>
-
 </div>
+
+</main>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeImg()">
   <img id="lightbox-img">
 </div>
-
-</main>
-
-<a href="#" class="top-btn">↑</a>
 
 <footer>
   <p>My Portfolio</p>
