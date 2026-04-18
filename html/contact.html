@@ -7,9 +7,60 @@
 
   <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      z-index: 999;
+    }
+
+    /* Animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover */
+    button {
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #0056b3;
+    }
+
+    a {
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #00bfff;
+    }
+  </style>
+
 </head>
 
 <body>
+
+<!-- Loader -->
+<div id="loader">Loading...</div>
 
 <header>
   <h1><i class="fa-solid fa-address-book"></i> Contact</h1>
@@ -20,13 +71,13 @@
     <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
     <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
 
-    <button onclick="document.body.classList.toggle('dark')">
+    <button onclick="toggleMode()">
       <i class="fa-solid fa-moon"></i>
     </button>
   </nav>
 </header>
 
-<main>
+<main class="fade">
 
 <table>
 
@@ -47,7 +98,11 @@
 
 <tr>
   <td><i class="fa-brands fa-github"></i> GitHub</td>
-  <td>github.com/saja5211-code</td>
+  <td>
+    <a href="https://github.com/saja5211-code" target="_blank">
+      github.com/saja5211-code
+    </a>
+  </td>
 </tr>
 
 <tr>
@@ -64,7 +119,7 @@
 
 <h2>Send Message</h2>
 
-<!-- الفورم الجديد -->
+<!-- الفورم الحقيقي -->
 <form action="https://api.web3forms.com/submit" method="POST">
 
   <input type="hidden" name="access_key" value="5547a3c0-3a21-486b-969d-dd87959d042c">
@@ -82,8 +137,31 @@
 </main>
 
 <footer>
-  <p>My Portfolio</p>
+  <p>© 2026 Farah | All Rights Reserved</p>
 </footer>
+
+<script>
+// Loader
+window.addEventListener("load", function(){
+  document.getElementById("loader").style.display = "none";
+});
+
+// Dark Mode
+function toggleMode(){
+  document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+    localStorage.setItem("mode","dark");
+  } else {
+    localStorage.setItem("mode","light");
+  }
+}
+
+
+if(localStorage.getItem("mode") === "dark"){
+  document.body.classList.add("dark");
+}
+</script>
 
 </body>
 </html>
