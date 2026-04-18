@@ -64,29 +64,26 @@
 
 <h2>Send Message</h2>
 
-<form onsubmit="sendMessage(event)">
-  <input type="text" placeholder="Your Name" required>
-  <input type="email" placeholder="Your Email" required>
-  <textarea placeholder="Your Message"></textarea>
+<!-- الفورم الجديد -->
+<form action="https://api.web3forms.com/submit" method="POST">
+
+  <input type="hidden" name="access_key" value="5547a3c0-3a21-486b-969d-dd87959d042c">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="email" name="email" placeholder="Your Email" required>
+
+  <textarea name="message" placeholder="Your Message" required></textarea>
 
   <button type="submit">Send</button>
-</form>
 
-<p id="msg"></p>
+</form>
 
 </main>
 
 <footer>
   <p>My Portfolio</p>
 </footer>
-
-<script>
-function sendMessage(e){
-  e.preventDefault();
-  document.getElementById("msg").innerHTML =
-  "✅ Message sent successfully!";
-}
-</script>
 
 </body>
 </html>
