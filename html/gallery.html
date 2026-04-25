@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Gallery</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -8,62 +9,74 @@
 <body>
 
 <header>
-  <h1>Gallery</h1>
+  <h1>🖼️ My Gallery</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="index.html">🏠 Home</a> |
+    <a href="about.html">👤 About</a> |
+    <a href="contact.html">✉️ Contact</a> |
+    <a href="gallery.html">🖼️ Gallery</a>
 
     <button onclick="document.body.classList.toggle('dark')">🌙</button>
   </nav>
 </header>
 
+<hr>
+
 <main>
 
-<div class="gallery">
+<section>
+  <h2>My Work & Photos</h2>
+  <p>Click on any image to view it in full size</p>
+</section>
+
+<br>
+
+<section class="gallery">
 
   <div class="card">
-    <img src="../images/code.jpg" onclick="openLightbox(0)">
+    <img src="../images/code.jpg" width="200" onclick="openLightbox(0)">
   </div>
 
   <div class="card">
-    <img src="../images/coding.jpg" onclick="openLightbox(1)">
+    <img src="../images/coding.jpg" width="200" onclick="openLightbox(1)">
   </div>
 
   <div class="card">
-    <img src="../images/desktop.jpg" onclick="openLightbox(2)">
+    <img src="../images/desktop.jpg" width="200" onclick="openLightbox(2)">
   </div>
 
   <div class="card">
-    <img src="../images/error.jpg" onclick="openLightbox(3)">
+    <img src="../images/error.jpg" width="200" onclick="openLightbox(3)">
   </div>
 
   <div class="card">
-    <img src="../images/project.jpg" onclick="openLightbox(4)">
+    <img src="../images/project.jpg" width="200" onclick="openLightbox(4)">
   </div>
 
   <div class="card">
-    <img src="../images/workspace.jpg" onclick="openLightbox(5)">
+    <img src="../images/workspace.jpg" width="200" onclick="openLightbox(5)">
   </div>
 
   <div class="card">
-    <img src="../images/swim.jpg" onclick="openLightbox(6)">
+    <img src="../images/swim.jpg" width="200" onclick="openLightbox(6)">
   </div>
 
   <div class="card">
-    <img src="../images/beach.jpg" onclick="openLightbox(7)">
+    <img src="../images/beach.jpg" width="200" onclick="openLightbox(7)">
   </div>
 
-</div>
+</section>
 
 </main>
 
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
+<hr>
 
-  <div class="lb-controls">
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" width="400">
+
+  <div>
     <button onclick="prev(event)">◀</button>
     <button onclick="next(event)">▶</button>
     <button onclick="closeLightbox()">✖</button>
@@ -71,7 +84,7 @@
 </div>
 
 <footer>
-  <p>My Portfolio</p>
+  <p>© 2026 My Portfolio</p>
 </footer>
 
 <script>
@@ -90,7 +103,7 @@ let current = 0;
 
 function openLightbox(i) {
   current = i;
-  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox").style.display = "block";
   document.getElementById("lightbox-img").src = images[current];
 }
 
@@ -100,15 +113,13 @@ function closeLightbox() {
 
 function next(e) {
   e.stopPropagation();
-  current++;
-  if(current >= images.length) current = 0;
+  current = (current + 1) % images.length;
   document.getElementById("lightbox-img").src = images[current];
 }
 
 function prev(e) {
   e.stopPropagation();
-  current--;
-  if(current < 0) current = images.length - 1;
+  current = (current - 1 + images.length) % images.length;
   document.getElementById("lightbox-img").src = images[current];
 }
 </script>

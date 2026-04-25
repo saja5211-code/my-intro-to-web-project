@@ -1,42 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
+<meta charset="UTF-8">
+<title>Home</title>
 
-  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1><i class="fa-solid fa-laptop-code"></i> My Portfolio</h1>
+<h1><i class="fa-solid fa-laptop-code"></i> My Portfolio</h1>
 
-  <nav>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-    <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+<nav>
+<a href="index.html">🏠 Home</a> |
+<a href="about.html">👤 About</a> |
+<a href="contact.html">✉️ Contact</a> |
+<a href="gallery.html">🖼️ Gallery</a>
 
-    <button onclick="document.body.classList.toggle('dark')">
-      <i class="fa-solid fa-moon"></i>
-    </button>
-  </nav>
+<button onclick="document.body.classList.toggle('dark')">🌙</button>
+</nav>
 </header>
 
+<hr>
+
+<!-- MAIN -->
 <main>
 
-<div class="hero">
-  <h2>Hello 👋 I'm Software Engineer</h2>
-  <p>Welcome to my portfolio website</p>
-</div>
+<section class="card">
+
+<h2>Hello 👋</h2>
+
+<p>
+I’m a Software Engineering student passionate about web development.
+I enjoy building websites and improving my skills every day.
+</p>
+
+<br>
+
+<a href="gallery.html">
+<button>👀 View My Work</button>
+</a>
+
+</section>
+
+<br>
+
+<!-- EXTRA SECTION (يعطي شكل أقوى للمشروع) -->
+<section class="card">
+
+<h2>Quick Info</h2>
+
+<ul>
+<li>🎓 Student at Libyan International University</li>
+<li>💻 Interested in Web Development</li>
+<li>📍 Benghazi, Libya</li>
+</ul>
+
+</section>
 
 </main>
 
+<hr>
+
+<!-- FOOTER -->
 <footer>
-  <p>My Portfolio</p>
+<p>© 2026 My Portfolio</p>
 </footer>
 
 </body>

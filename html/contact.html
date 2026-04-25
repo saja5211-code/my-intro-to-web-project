@@ -1,167 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact</title>
-
-  <link rel="stylesheet" href="../css/style.css">
-
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    /* Loader */
-    #loader {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      z-index: 999;
-    }
-
-    /* Animation */
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hover */
-    button {
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background-color: #0056b3;
-    }
-
-    a {
-      transition: 0.3s;
-    }
-
-    a:hover {
-      color: #00bfff;
-    }
-  </style>
-
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<!-- Loader -->
-<div id="loader">Loading...</div>
-
 <header>
-  <h1><i class="fa-solid fa-address-book"></i> Contact</h1>
+    <h1>📬 Contact Me</h1>
 
-  <nav>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-    <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
-
-    <button onclick="toggleMode()">
-      <i class="fa-solid fa-moon"></i>
-    </button>
-  </nav>
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">👤 About</a>
+        <a href="gallery.html">🖼️ Gallery</a>
+        <a href="contact.html">✉️ Contact</a>
+    </nav>
 </header>
 
-<main class="fade">
+<hr>
 
-<table>
+<main>
+
+<!-- CONTACT INFO -->
+<section class="card">
+
+<h2>Feel free to reach out</h2>
+
+<table class="contact-table" border="1" cellpadding="10">
 
 <tr>
-  <th>Type</th>
-  <th>Details</th>
+<th>Type</th>
+<th>Details</th>
 </tr>
 
 <tr>
-  <td><i class="fa-solid fa-envelope"></i> Email</td>
-  <td>saja_5211@limu.edu.ly</td>
+<td>📧 Email</td>
+<td>
+<a href="mailto:saja_5211@limu.edu.ly">
+saja_5211@limu.edu.ly
+</a>
+</td>
 </tr>
 
 <tr>
-  <td><i class="fa-solid fa-phone"></i> Phone</td>
-  <td>+218 914628911</td>
+<td>📞 Phone</td>
+<td>
+<a href="tel:+218914628911">
++218 914628911
+</a>
+</td>
 </tr>
 
 <tr>
-  <td><i class="fa-brands fa-github"></i> GitHub</td>
-  <td>
-    <a href="https://github.com/saja5211-code" target="_blank">
-      github.com/saja5211-code
-    </a>
-  </td>
+<td>💻 GitHub</td>
+<td>
+<a href="https://github.com/saja5211-code" target="_blank">
+github.com/saja5211-code
+</a>
+</td>
 </tr>
 
 <tr>
-  <td><i class="fa-solid fa-location-dot"></i> Location</td>
-  <td>Benghazi, Libya</td>
-</tr>
-
-<tr>
-  <td><i class="fa-solid fa-code"></i> Specialization</td>
-  <td>Software Engineer</td>
+<td>📍 Location</td>
+<td>Benghazi, Libya</td>
 </tr>
 
 </table>
 
-<h2>Send Message</h2>
+</section>
 
-<!-- الفورم الحقيقي -->
-<form action="https://api.web3forms.com/submit" method="POST">
+<br>
 
-  <input type="hidden" name="access_key" value="5547a3c0-3a21-486b-969d-dd87959d042c">
+<!-- CONTACT FORM -->
+<section class="card">
 
-  <input type="text" name="name" placeholder="Your Name" required>
+<h2>Send Message ✉️</h2>
 
-  <input type="email" name="email" placeholder="Your Email" required>
+<form>
 
-  <textarea name="message" placeholder="Your Message" required></textarea>
+<label>Your Name:</label><br>
+<input type="text" placeholder="Enter your name" required><br><br>
 
-  <button type="submit">Send</button>
+<label>Your Email:</label><br>
+<input type="email" placeholder="Enter your email" required><br><br>
+
+<label>Your Message:</label><br>
+<textarea placeholder="Write your message" rows="5" required></textarea><br><br>
+
+<button type="submit">Send</button>
 
 </form>
 
+</section>
+
 </main>
 
+<hr>
+
 <footer>
-  <p>© 2026 Farah | All Rights Reserved</p>
+<p>© 2026 My Portfolio</p>
 </footer>
-
-<script>
-// Loader
-window.addEventListener("load", function(){
-  document.getElementById("loader").style.display = "none";
-});
-
-// Dark Mode
-function toggleMode(){
-  document.body.classList.toggle("dark");
-
-  if(document.body.classList.contains("dark")){
-    localStorage.setItem("mode","dark");
-  } else {
-    localStorage.setItem("mode","light");
-  }
-}
-
-
-if(localStorage.getItem("mode") === "dark"){
-  document.body.classList.add("dark");
-}
-</script>
 
 </body>
 </html>
